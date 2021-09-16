@@ -1,0 +1,55 @@
+
+body{
+    height: 200vh;
+}
+
+.container{
+    display: grid;
+    grid-template-areas:
+     "grid_a grid_a grid_a  ";
+}
+
+.card_wrap {
+width: 100px;
+height: 150px;
+
+border-radius: 0.5em;
+/* background: #fff000; */
+perspective: 500px;
+}
+
+.card-side {
+width: 100px;
+height: 150px;
+
+position: absolute;
+left: 50%;
+top: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;    
+
+border-radius: 0.5em;
+font-size: 1.5rem;
+
+-webkit-backface-visibility: hidden;   /* 🦄 */
+backface-visibility: hidden;   /* 🦄 */
+
+transition: 1s;
+}
+.card-side-front {
+z-index: 1;
+background: hotpink;
+}
+.card-side-back {
+background: lightpink;
+transform: rotateY(180deg);
+}
+.card_wrap:hover .card-side-front {
+transform: rotateY(180deg);
+}
+.card_wrap:hover .card-side-back {
+transform: rotateY(360deg);
+}
+
